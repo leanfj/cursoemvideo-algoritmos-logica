@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Teste de Algoritmo IMC</title>
+</head>
+<body>
+  <input type="text" placeholder="Informe seu peso" id="peso">
+  <input type="text" placeholder="Informe sua altura" id="altura">
+  <button type="button" name="button" onclick="calculaIMC()">Calcular IMC</button>
+  <p class="IMC"></p>
+  <p class="texto"></p>
+
+  <script>
+    function calculaIMC() {
+      var peso = document.querySelector('#peso').value;
+      var altura = document.querySelector('#altura').value;
+
+      var texto = document.querySelector('.texto');
+
+      var imc = parseInt(peso) / (parseFloat(altura) ** 2);
+
+      document.querySelector('.IMC').innerHTML = "Seu IMC é de " + imc.toPrecision(4);
+
+      if (imc < 17) {
+        texto.innerHTML = "Muito abaixo do peso";
+      } else if (imc >= 17 && imc < 18.5) {
+        texto.innerHTML = "Abaixo do peso";
+      } else if (imc >= 18.5 && imc < 25) {
+        texto.innerHTML = "Peso ideal";
+      } else if (imc >= 25 && imc < 30) {
+        texto.innerHTML = "Sobrepeso";
+      } else if (imc >= 30 && imc < 35) {
+        texto.innerHTML = "Obesidade";
+      } else if (imc >= 35 && imc < 40) {
+        texto.innerHTML = "Obesidade severa";
+      } else {
+        texto.innerHTML = "Obesidade Morbida";
+      }
+
+
+      console.log(parseInt(peso));
+      console.log(parseFloat(altura));
+      console.log(imc);
+    }
+  </script>
+</body>
+</html>

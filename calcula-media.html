@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Teste de Algoritmo Media</title>
+</head>
+<body>
+  <input type="text" placeholder="Primeira nota" id="primeiraNota">
+  <input type="text" placeholder="Segunda nota" id="segundaNota">
+  <button type="button" name="button" onclick="calculaMedia()">Calcular Media</button>
+  <p class="nota"></p>
+  <p class="texto"></p>
+
+  <script>
+    function calculaMedia() {
+      var nota1 = document.querySelector('#primeiraNota').value;
+      var nota2 = document.querySelector('#segundaNota').value;
+
+      var media = (parseInt(nota1) + parseInt(nota2))/2;
+
+      document.querySelector('.nota').innerHTML = String(media);
+
+      if (media >= 7) {
+        document.querySelector('.texto').innerHTML = "Aluno Aprovado";
+      } else if (media >= 5 && media < 7) {
+        document.querySelector('.texto').innerHTML = "Aluno em recuperação";
+      } else {
+        document.querySelector('.texto').innerHTML = "Aluno reprovado";
+      }
+
+      console.log(nota1);
+      console.log(nota2);
+      console.log(media);
+    }
+  </script>
+</body>
+</html>

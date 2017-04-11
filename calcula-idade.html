@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Teste de Algoritmo Idade</title>
+</head>
+<body>
+  <input type="text" placeholder="Ano de nascimento" id="anoNascimento">
+  <input type="text" placeholder="Ano atual" id="anoAtual">
+  <button type="button" name="button" onclick="calculaIdade()">Calcular</button>
+  <p class="idade"></p>
+  <p class="texto"></p>
+
+  <script>
+    function calculaIdade() {
+      var anoNascimento = document.querySelector('#anoNascimento').value;
+      var anoAtual = document.querySelector('#anoAtual').value;
+
+      var idade = anoAtual - anoNascimento;
+
+      document.querySelector('.idade').innerHTML = idade;
+
+      if (idade >= 18) {
+        document.querySelector('.texto').innerHTML = "Maior de idade";
+      } else {
+        document.querySelector('.texto').innerHTML = "Menor de idade";
+      }
+    }
+  </script>
+</body>
+</html>
